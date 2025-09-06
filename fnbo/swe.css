@@ -44,11 +44,7 @@ p {
     width: 100%;
 }
 
-#quote {
-    font-style: italic;
-    padding: 20px;
-    background-color: #f5f5f5;
-    border-radius: 10px;
+#experience {
     margin-bottom: 30px;
 }
 
@@ -62,17 +58,16 @@ p {
     margin: 20px 0;
 }
 
-video.media-content {
-    display: block;
-}
-
-.is-visible {
-    opacity: 1;
+.fnbo-logo {
+    max-width: 850px;
+    max-height: 300px;
+    width: 100%;
+    height: auto;
 }
 
 a, a:visited {
     text-decoration: none;
-    color: black;
+    color: inherit;
     transition: opacity 0.2s ease;
 }
 
@@ -89,6 +84,10 @@ a:hover {
     border-bottom: none;
 }
 
+.is-visible {
+    opacity: 1;
+}
+
 @media screen and (max-width: 900px) {
     body {
         font-size: 20px;
@@ -101,10 +100,6 @@ a:hover {
 
     .media-content {
         border-radius: 10px;
-    }
-
-    #quote {
-        padding: 15px;
     }
 }
 
