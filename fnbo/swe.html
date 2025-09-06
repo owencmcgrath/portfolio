@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="etl.css">
+		<link rel="icon" href="favicon4.ico" type="image/x-icon">
+		<base href="https://owencmcgrath.com/">
+		<title>
+			FNBO - SWE
+		</title>
+	</head>
+	<body>
+		<div class="content-section">
+			<h2 class="section-header">
+				FNBO - SWE
+			</h2>
+			<h5 class="section-header">
+				May 2025 - Aug. 2025
+			</h5>
+			<p id="experience">
+				For my third internship, I returned to FNBO as a Software Engineer within
+				their Core Services team. I worked with a team of developers that all focused
+				on the bank's mainframe system, which included various legacy applications
+				and databases. My primary focus was to help modernize the system while
+				also learning how to work in a completley alien world to a modern software
+				engineer.
+			</p>
+			<img src="fnbo/assets/fnbo.png" class="media-content fnbo-logo" alt="FNBO Logo">
+		</div>
+		<div class="content-section">
+			<h3 class="section-header">
+				GitLab & CI/CD
+			</h3>
+			<p>
+				The mainframe system is old, really old. I frequently opened files that
+				were written in the early 1980s, which is about twenty years older than
+				I am.
+			</p>
+			<p>
+				Recognizing the system's legacy and how most schools don't teach COBOL
+				or JCL courses, my team was focused on modernizing the system via GitLab
+				and CI/CD practices. This ensured that new developers wouldn't have to
+				use outdated technologies that they were unfamiliar with.
+			</p>
+			<p>
+				This was done by creating environments that used
+				<a href="https://marketplace.visualstudio.com/items?itemName=IBM.zopeneditor"
+				target="_blank">
+					<strong>
+						IBM Z Open Editor
+					</strong>
+				</a>
+				&#8599 within VSCode which allowed us to develop locally, in a modern
+				IDE, push into a GitLab code repository, and collaborate on files.
+			</p>
+			<img src="fnbo/assets/pipeline.png" class="media-content" alt="GitLab Pipeline">
+		</div>
+		<div class="content-section">
+			<h3 class="section-header">
+				Mainframe Development
+			</h3>
+			<p>
+				In order to effectively develop our CI/CD pipelines and modernize our
+				processes, I had to become a proficient COBOL developer.
+			</p>
+			<p>
+				I created several programs that focused on reading in customer credit
+				card transactions, manipulating the data, and writing it back out to a
+				report file, which is what the mainframe is best at.
+			</p>
+            <p>
+                While this internship wasn't exactly on the cutting edge of technology,
+                I gained invaluable experience in learning how to adapt to new languages.
+                I have been able to take the strategies I formulated when working with
+                COBOL and learn myriad of other languages and tools. I truly feel like
+                I can teach myself anything.
+            </p>
+			<img src="fnbo/assets/bluezone.png" class="media-content" alt="BlueZone Terminal Emulator">
+		</div>
+		<div class="content-section home-link">
+			<p>
+				<a href="/">
+					<strong>
+						&larr; Head Home
+					</strong>
+				</a>
+			</p>
+		</div>
+		<script>
+			document.addEventListener("DOMContentLoaded",
+                function() {
+                    const observer = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add('is-visible');
+                            }
+                        });
+                    },
+                    {
+                        threshold: 0.1
+                    });
+
+                    const elements = document.querySelectorAll('.media-content');
+                    elements.forEach(el => observer.observe(el));
+                });
+		</script>
+	</body>
+
+</html>
