@@ -27,11 +27,6 @@ body {
     opacity: 0.7;
 }
 
-.nav-item.active::after {
-    transform: scaleX(1);
-}
-
-
 .nav-item.active {
     opacity: 1;
 }
@@ -112,6 +107,13 @@ a:visited {
     opacity: 0.7;
 }
 
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+
 .post-text {
     flex: 1;
 }
@@ -130,23 +132,13 @@ a:visited {
     line-height: 1.5;
 }
 
-.post-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    /* Change back to flex-start */
-    gap: 20px;
-}
-
 .post-date {
     font-size: 0.7em;
     opacity: 0.5;
     white-space: nowrap;
     margin-top: auto;
-    /* This will push it to the bottom */
     line-height: 1.5;
     padding-top: 100px;
-    /* Adjust this to control how far down it goes */
 }
 
 @media screen and (max-width: 768px) {
