@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../writings.css">
+	<link rel="icon" href="favicon4.ico" type="image/x-icon">
+	<title>what should stellantis do?</title>
+</head>
+
+<body>
+	<div class="title">
+		what should stellantis do?
+	</div>
+	<div class="subtitle">
+		is the $3bn loss just the start of a bigger problem? almost certainly.
+	</div>
+	<div class="media-content">
+		<img src="/writings/stellantis/images/stock-price.png" alt="stellantis stock price chart">
+		<div class="img-caption">
+			stellantis stock price over the last year
+		</div>
+		<div class="img-credit">
+			chart from morningstar
+		</div>
+	</div>
+	<div class="text-content">
+		<p>
+			in the history of great automotive blunders, it is hard to put stellantis' late 2010s through mid 2020s run
+			anywhere other than the top three.
+			it's a classic case of marketers and executives listening to shareholders instead of their customers,
+			ultimately resulting in a declining share price,
+			dying brands, and waning consumer sentiment.
+		</p>
+	</div>
+	<div class="text-content">
+		<p>
+			it's important to note how stellantis came to be: like all great, successful, and remembered companies, m&a!
+			essentially, during the financial crisis, chrysler filed for bankruptcy and was eventually bailed out by the
+			auto-unions, the u.s. government, and most importantly (for our story) the fiat group at 58.5% of the
+			company (merger completed in 2014).
+		</p>
+	</div>
+	<div class="text-content">
+		<p>
+			they had a solid run for a few years, with cars like the jeep wrangler
+			propelling the company into a renaissance period, or as much of a renaissance as hodge-podge of poorly
+			defined brands can really have. however, after falsifying emissiosn tests (because that worked <i> so well
+			</i> for vw) they merged with <a href="https://en.wikipedia.org/wiki/PSA_Group">PSA</a> to form Stellantis.
+		</p>
+	</div>
+	<div class="media-content">
+		<img src="/writings/stellantis/images/stellantis-lineup.png" alt="stellantis stock price chart">
+		<div class="img-caption">
+			ain't that a winners circle
+		</div>
+		<div class="img-credit">
+			screenshot from <a href="https://www.stellantis.com/en/brands">stellantis</a>
+		</div>
+	</div>
+	<div class="text-content">
+		so, what is stellantis supposed to do? they bled 3 billion last year and a lot of these brands have lineups that
+		are long in the tooth. since i am a degenerate american, i am only really going to focus on the brands that we
+		see stateside (alfa, chrysler, dodge/ram, fiat, jeep, maserati)
+	</div>
+	<div class = "text-content">
+		<h3>alfa/maserati</h3>
+	</div>
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+			const observer = new IntersectionObserver((entries) => {
+				entries.forEach(entry => {
+					if (entry.isIntersecting) {
+						entry.target.classList.add('is-visible');
+					}
+				});
+			}, {
+				threshold: 0.1
+			});
+			const elements = document.querySelectorAll('.media-content');
+			elements.forEach(el => observer.observe(el));
+		});
+	</script>
+</body>
+
+</html>
