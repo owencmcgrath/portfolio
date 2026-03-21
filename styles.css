@@ -1,16 +1,48 @@
+@font-face {
+    font-family: "EditorialNew";
+    src: url("fonts/editorial-new-regular.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
-    padding: 32px;
-    min-height: 100vh;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     background-color: #FAF9F6;
+}
+
+.hero {
+    position: relative;
+    height: 100vh;
+    padding: 32px;
     display: flex;
     align-items: flex-end;
 }
 
+.columns {
+    position: absolute;
+    bottom: 32px;
+    right: 32px;
+    display: flex;
+    gap: 48px;
+}
+
+.column p {
+    margin: 0 0 12px 0;
+    font-size: 14px;
+}
+
 .name {
     margin: 0;
-    font-size: 72px;
-    font-weight: 700;
+    font-family: "EditorialNew", serif;
+    font-size: 164px;
+    font-weight: normal;
     line-height: 1;
 }
