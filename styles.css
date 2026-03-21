@@ -39,6 +39,10 @@ body {
     font-size: 14px;
 }
 
+.column p:last-child {
+    margin-bottom: 0;
+}
+
 .name {
     margin: 0;
     font-family: "EditorialNew", serif;
