@@ -1,265 +1,337 @@
 <!-- Favicon can be found here: <a href="https://www.flaticon.com/free-icons/bear"
 title="bear icons">Bear icons created by Freepik - Flaticon</a>-->
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            http-equiv="Content-Security-Policy"
+            Ï
+            content="default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self'; font-src 'self';"
+        />
+        <meta name="referrer" content="strict-origin-when-cross-origin" />
+        <link
+            rel="preload"
+            href="fonts/editorial-new-regular.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin
+        />
+        <link
+            rel="preload"
+            href="fonts/manrope-regular.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin
+        />
+        <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+        <link rel="icon" href="favicon.ico" sizes="32x32" type="image/x-icon" />
+        <title>Home</title>
+        <style>
+            @font-face {
+                font-family: "EditorialNew";
+                src: url("fonts/editorial-new-regular.woff2") format("woff2");
+                font-weight: normal;
+                font-style: normal;
+                font-display: swap;
+            }
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="Content-Security-Policy"
-	      content="default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self'; font-src 'self';">
-	<meta name="referrer" content="strict-origin-when-cross-origin">
-	<link rel="preload" href="fonts/editorial-new-regular.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="preload" href="fonts/manrope-regular.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="icon" href="favicon.svg" type="image/svg+xml">
-	<link rel="icon" href="favicon.ico" sizes="32x32" type="image/x-icon">
-	<title>Home</title>
-	<style>
-		@font-face {
-			font-family: "EditorialNew";
-			src: url("fonts/editorial-new-regular.woff2") format("woff2");
-			font-weight: normal;
-			font-style: normal;
-			font-display: swap;
-		}
+            @font-face {
+                font-family: "Manrope";
+                src: url("fonts/manrope-regular.woff2") format("woff2");
+                font-weight: normal;
+                font-style: normal;
+                font-display: swap;
+            }
 
-		@font-face {
-			font-family: "Manrope";
-			src: url("fonts/manrope-regular.woff2") format("woff2");
-			font-weight: normal;
-			font-style: normal;
-			font-display: swap;
-		}
+            *,
+            *::before,
+            *::after {
+                box-sizing: border-box;
+            }
 
-		*,
-		*::before,
-		*::after {
-			box-sizing: border-box;
-		}
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                }
 
-		@keyframes fadeIn {
-			from {
-				opacity: 0;
-			}
+                to {
+                    opacity: 1;
+                }
+            }
 
-			to {
-				opacity: 1;
-			}
-		}
+            body {
+                margin: 0;
+                padding: 0;
+                height: 100dvh;
+                overflow: hidden;
+                min-height: 100dvh;
+                font-family:
+                    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                    Helvetica, Arial, sans-serif;
+                background-color: #faf9f6;
+            }
 
-		body {
-			margin: 0;
-			padding: 0;
-			height: 100dvh;
-			overflow: hidden;
-			min-height: 100dvh;
-			font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-			background-color: #FAF9F6;
-		}
+            .skip-link {
+                position: absolute;
+                left: -9999px;
+                top: auto;
+                width: 1px;
+                height: 1px;
+                overflow: hidden;
+                font-family: "Manrope", sans-serif;
+                font-size: 16px;
+                padding: 8px 16px;
+                background: currentColor;
+                color: #faf9f6;
+                z-index: 1000;
+                text-decoration: none;
+            }
 
-		.skip-link {
-			position: absolute;
-			left: -9999px;
-			top: auto;
-			width: 1px;
-			height: 1px;
-			overflow: hidden;
-			font-family: "Manrope", sans-serif;
-			font-size: 16px;
-			padding: 8px 16px;
-			background: currentColor;
-			color: #FAF9F6;
-			z-index: 1000;
-			text-decoration: none;
-		}
+            .skip-link:focus {
+                position: fixed;
+                top: 16px;
+                left: 16px;
+                width: auto;
+                height: auto;
+            }
 
-		.skip-link:focus {
-			position: fixed;
-			top: 16px;
-			left: 16px;
-			width: auto;
-			height: auto;
-		}
+            .hero {
+                position: relative;
+                height: 100dvh;
+            }
 
-		.hero {
-			position: relative;
-			height: 100dvh;
-		}
+            .name {
+                position: absolute;
+                bottom: 0;
+                left: 32px;
+                margin: 0;
+                font-family: "EditorialNew", serif;
+                font-size: clamp(96px, 12vw, 164px);
+                font-weight: normal;
+                line-height: 1;
+                animation: fadeIn 1.6s ease both;
+            }
 
-		.name {
-			position: absolute;
-			bottom: 0;
-			left: 32px;
-			margin: 0;
-			font-family: "EditorialNew", serif;
-			font-size: clamp(96px, 12vw, 164px);
-			font-weight: normal;
-			line-height: 1;
-			animation: fadeIn 1.6s ease both;
-		}
+            .columns {
+                position: absolute;
+                bottom: 32px;
+                right: 80px;
+                display: flex;
+                align-items: flex-end;
+                gap: 48px;
+                animation: fadeIn 1.6s ease 0.2s both;
+            }
 
-		.columns {
-			position: absolute;
-			bottom: 32px;
-			right: 80px;
-			display: flex;
-			align-items: flex-end;
-			gap: 48px;
-			animation: fadeIn 1.6s ease 0.2s both;
-		}
+            .columns::before {
+                content: "";
+                position: absolute;
+                right: -40px;
+                top: 0;
+                bottom: 0;
+                width: 2.25px;
+                background-color: currentColor;
+                border-radius: 999px;
+            }
 
-		.columns::before {
-			content: "";
-			position: absolute;
-			right: -40px;
-			top: 0;
-			bottom: 0;
-			width: 2.25px;
-			background-color: currentColor;
-			border-radius: 999px;
-		}
+            .column a {
+                text-decoration: none;
+                color: inherit;
+                position: relative;
+            }
 
-		.column a {
-			text-decoration: none;
-			color: inherit;
-			position: relative;
-		}
+            .column a::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: -2px;
+                width: 0;
+                height: 1px;
+                background-color: currentColor;
+                transition: width 0.25s ease;
+            }
 
-		.column a::after {
-			content: "";
-			position: absolute;
-			left: 0;
-			bottom: -2px;
-			width: 0;
-			height: 1px;
-			background-color: currentColor;
-			transition: width 0.25s ease;
-		}
+            .column a:hover::after {
+                width: 100%;
+            }
 
-		.column a:hover::after {
-			width: 100%;
-		}
+            .column a:focus-visible {
+                outline: 2px solid currentColor;
+                outline-offset: 4px;
+                border-radius: 2px;
+            }
 
-		.column a:focus-visible {
-			outline: 2px solid currentColor;
-			outline-offset: 4px;
-			border-radius: 2px;
-		}
+            .column a:focus-visible::after {
+                width: 100%;
+            }
 
-		.column a:focus-visible::after {
-			width: 100%;
-		}
+            .column ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
 
-		.column ul {
-			list-style: none;
-			margin: 0;
-			padding: 0;
-		}
+            .column li {
+                margin: 0 0 12px 0;
+                font-family: "Manrope", sans-serif;
+                font-size: 28px;
+            }
 
-		.column li {
-			margin: 0 0 12px 0;
-			font-family: "Manrope", sans-serif;
-			font-size: 28px;
-		}
+            .column li:last-child {
+                margin-bottom: 0;
+            }
 
-		.column li:last-child {
-			margin-bottom: 0;
-		}
+            @media (prefers-color-scheme: dark) {
+                body {
+                    background-color: #050609;
+                    color: #ffffff;
+                }
+            }
 
-		@media (prefers-color-scheme: dark) {
-			body {
-				background-color: #050609;
-				color: #FFFFFF;
-			}
-		}
+            @media screen and (max-width: 1068px) {
+                body {
+                    overflow: auto;
+                }
 
-		@media screen and (max-width: 1068px) {
-			body {
-				overflow: auto;
-			}
+                .hero {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-end;
+                    padding: 24px;
+                }
 
-			.hero {
-				display: flex;
-				flex-direction: column;
-				justify-content: flex-end;
-				padding: 24px;
-			}
+                .name {
+                    position: static;
+                }
 
-			.name {
-				position: static;
-			}
+                .columns {
+                    position: static;
+                    order: -1;
+                    margin-bottom: 24px;
+                    gap: 32px;
+                }
 
-			.columns {
-				position: static;
-				order: -1;
-				margin-bottom: 24px;
-				gap: 32px;
-			}
+                .columns::before {
+                    display: none;
+                }
 
-			.columns::before {
-				display: none;
-			}
+                .name-first {
+                    display: inline-block;
+                }
 
-			.name-first {
-				display: inline-block;
-			}
+                .name-first::before {
+                    content: "";
+                    display: block;
+                    width: 100%;
+                    height: 2.25px;
+                    background-color: currentColor;
+                    border-radius: 999px;
+                    margin-bottom: 24px;
+                }
 
-			.name-first::before {
-				content: "";
-				display: block;
-				width: 100%;
-				height: 2.25px;
-				background-color: currentColor;
-				border-radius: 999px;
-				margin-bottom: 24px;
-			}
+                .column li {
+                    font-size: 24px;
+                }
+            }
 
-			.column li {
-				font-size: 24px;
-			}
-		}
+            @media (prefers-reduced-motion: reduce) {
+                .name,
+                .columns {
+                    animation: none;
+                }
+            }
+        </style>
+    </head>
 
-		@media (prefers-reduced-motion: reduce) {
-
-			.name,
-			.columns {
-				animation: none;
-			}
-		}
-	</style>
-</head>
-
-<body>
-	<a href="#main-content" class="skip-link">Skip to content</a>
-	<div class="hero" id="main-content">
-		<h1 class="name"><span class="name-first">Owen</span><br>McGrath</h1>
-		<nav class="columns" aria-label="Projects and profiles">
-			<div class="column">
-				<ul>
-					<li><a href="https://cmd-find.app/" target="_blank" rel="noopener noreferrer"
-					   aria-label="cmd-find — semantically search any webpage">cmd-find</a></li>
-					<li><a href="https://owencmcgrath.github.io/hrml/web/" target="_blank" rel="noopener noreferrer"
-					   aria-label="hrml — markup language with homerow syntax">hrml</a></li>
-					<li><a href="https://www.am2web.com/login" target="_blank" rel="noopener noreferrer"
-					   aria-label="am2web — convert Apple Music XML into rich statistics">am2web</a></li>
-					<li><a href="https://github.com/owencmcgrath" target="_blank" rel="noopener noreferrer"
-					   aria-label="Owen McGrath's GitHub profile">github</a></li>
-				</ul>
-			</div>
-			<div class="column">
-				<ul>
-					<li><a href="https://fnbo.com" target="_blank" rel="noopener noreferrer"
-					   aria-label="FNBO — First National Bank of Omaha">fnbo</a></li>
-					<li><a href="https://sameral-khateeb.github.io/MobsModeling/index.html" target="_blank" rel="noopener noreferrer"
-					   aria-label="Mobs Modeling — mobs simulation research project">mobs</a></li>
-					<li><a href="https://patternlife.com/" target="_blank" rel="noopener noreferrer"
-					   aria-label="Pattern — disability and life insurance provider">pattern</a></li>
-					<li><a href="https://www.linkedin.com/in/owen-mcgrath-ocm/" target="_blank" rel="noopener noreferrer"
-					   aria-label="Owen McGrath's LinkedIn profile">linkedin</a></li>
-				</ul>
-			</div>
-		</nav>
-	</div>
-</body>
-
+    <body>
+        <a href="#main-content" class="skip-link">Skip to content</a>
+        <div class="hero" id="main-content">
+            <h1 class="name">
+                <span class="name-first">Owen</span><br />McGrath
+            </h1>
+            <nav class="columns" aria-label="Projects and profiles">
+                <div class="column">
+                    <ul>
+                        <li>
+                            <a
+                                href="https://cmd-find.app/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="cmd-find — semantically search any webpage"
+                                >cmd-find</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="https://owencmcgrath.github.io/hrml/web/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="hrml — markup language with homerow syntax"
+                                >hrml</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="https://www.am2web.com/login"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="am2web — convert Apple Music XML into rich statistics"
+                                >am2web</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="https://github.com/owencmcgrath"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="Owen McGrath's GitHub profile"
+                                >github</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <ul>
+                        <li>
+                            <a
+                                href="https://fnbo.com"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="FNBO — First National Bank of Omaha"
+                                >fnbo</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="https://sameral-khateeb.github.io/MobsModeling/index.html"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="Mobs Modeling — mobs simulation research project"
+                                >mobs</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="https://patternlife.com/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="Pattern — disability and life insurance provider"
+                                >pattern</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="https://www.linkedin.com/in/owen-mcgrath-ocm/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="Owen McGrath's LinkedIn profile"
+                                >linkedin</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </body>
 </html>
